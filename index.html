@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Tareas Académicas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- LOGIN -->
+    <div id="login-section" class="card">
+      <h2>Iniciar Sesión</h2>
+      <p><strong>Grupo #5 - Metodología de Desarrollo de Software</strong></p>
+      <input type="email" id="email" placeholder="Correo electrónico">
+      <input type="password" id="password" placeholder="Contraseña">
+      <button onclick="login()">Ingresar</button>
+      <p id="login-error" class="error"></p>
+    </div>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <div id="main-section" class="card" style="display:none;">
+      <h1>Gestor de Tareas</h1>
+      <p id="nombre-usuario"></p>
+      <button id="btn-cerrar-sesion" onclick="cerrarSesion()">Cerrar sesión</button>
+
+      <!-- SOLO PROFESOR: Crear tareas -->
+      <div id="formulario-tareas" style="display:none;">
+        <h2>Agregar Tarea</h2>
+        <input type="text" id="titulo" placeholder="Título de la tarea">
+        <input type="date" id="fecha">
+        <button onclick="agregarTarea()">Agregar</button>
+      </div>
+
+      <!-- LISTADO DE TAREAS -->
+      <div id="seccion-tareas">
+        <h2>Lista de Tareas</h2>
+        <ul id="lista-tareas"></ul>
+      </div>
+
+      <hr>
+
+      <!-- SOLO PROFESOR: Calificar -->
+      <div id="registro-notas" style="display:none;">
+        <h2>Registro de Calificaciones</h2>
+        <input type="text" id="nombre-estudiante" placeholder="Nombre del estudiante">
+        <input type="number" id="nota" placeholder="Nota (0 a 20)" min="0" max="20">
+        <button onclick="agregarCalificacion()">Agregar Calificación</button>
+      </div>
+
+      <h3>Lista de Calificaciones</h3>
+      <ul id="lista-calificaciones"></ul>
+
+      <hr>
+
+      <!-- SOLO ALUMNO: Entregar tareas -->
+      <div id="entrega-tareas" style="display:none;">
+        <h2>Entregar Tarea</h2>
+        <select id="tarea-entregar"></select>
+        <input type="file" id="archivo-tarea">
+        <button onclick="entregarTarea()">Enviar</button>
+      </div>
+
+      <!-- SOLO PROFESOR: Registro de entregas -->
+      <div id="registro-entregas" style="display:none;">
+        <h2>Entregas de Tareas</h2>
+        <div id="lista-entregas"></div>
+      </div>
+
+      <hr>
+
+      <!-- CHAT -->
+      <div id="seccion-chat">
+        <h2>Chat Académico</h2>
+        <div id="chat-box" class="chat-box"></div>
+        <div class="input-chat">
+          <input type="text" id="mensaje-chat" placeholder="Escribe tu mensaje...">
+          <button onclick="enviarMensajeChat()">Enviar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
